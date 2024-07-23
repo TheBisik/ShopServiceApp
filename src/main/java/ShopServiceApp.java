@@ -9,7 +9,7 @@ public class ShopServiceApp {
     public static void main(String[] args) {
 
         DisplayUtil.space();
-        ShopItems tempomaryItem1 = new ShopItems(2, "pen", "Ii's a black pen.", 200);
+        ShopItem tempomaryItem1 = new ShopItem(2, "pen", "Ii's a black pen.", 200);
         tempomaryItem1.getInfo();
 
     }

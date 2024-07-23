@@ -3,11 +3,11 @@ package main.java.domain;
 import main.java.utils.DisplayUtil;
 
 
-public class ShopItems {
+public class ShopItem {
     private int id, price;
     private String name, description;
 
-    public ShopItems(int id, String name, String description, int price) {
+    public ShopItem(int id, String name, String description, int price) {
         this.id = id;
         this.name = name;
         this.description = description;
