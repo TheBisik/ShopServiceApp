@@ -2,6 +2,8 @@ package domain;
 
 import enums.SoapType;
 
+import static utils.DisplayUtil.displayInLine;
+
 import java.math.BigDecimal;
 
 public class Soap extends Product {
@@ -16,5 +18,6 @@ public class Soap extends Product {
     @Override
     public void describe() {
         //TODO prosze napisać własną implementację tej metody
+        displayInLine("ID:\t" + id + "\nName:\t" + name + "\nType of Soap:\t" + soapType + "\nDescription:\t" + description + "\nPrice:\t" + price + "pln");
     }
 }

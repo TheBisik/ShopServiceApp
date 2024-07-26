@@ -6,7 +6,7 @@ public abstract class Product {
 
     long id;
 
-    protected String name; //TODO proszę poczytać o modyfikatorze dostępu protected
+    protected String name; //TODO proszę poczytać o modyfikatorze dostępu protected // x
 
     protected BigDecimal price; // TODO: Proszę poczytać o tym typie, ma on zastosowanie w rozliczeniach walutowych
 
