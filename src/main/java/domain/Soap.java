@@ -2,7 +2,8 @@ package domain;
 
 import enums.SoapType;
 
-import static utils.DisplayUtil.displayInLine;
+//import static com.sun.beans.introspect.PropertyInfo.Name.description;
+
 
 import java.math.BigDecimal;
 
@@ -15,9 +16,24 @@ public class Soap extends Product {
         this.soapType = soapType;
     }
 
+    public Long getId() {
+        return id;
+    }
+    public String getName(){
+        return name;
+    }
+    public BigDecimal getPrice(){
+        return price;
+    }
+    public String getDescription(){
+        return description;
+    }
+    public SoapType getEnum() {
+        return soapType;
+    }
+
     @Override
     public void describe() {
-        //TODO prosze napisać własną implementację tej metody
-        displayInLine("ID:\t" + id + "\nName:\t" + name + "\nType of Soap:\t" + soapType + "\nDescription:\t" + description + "\nPrice:\t" + price + "pln");
+        utils.DisplayUtil.describeThis(this.getId(), this.getEnum(), this.getName(), this.getDescription(), this.getPrice());
     }
 }

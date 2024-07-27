@@ -1,9 +1,11 @@
 package domain;
 
 import enums.ClothsTypeForWashing;
-import utils.DisplayUtil;
+
 
 import java.math.BigDecimal;
+
+
 
 public class WashingPowder extends Product {
 
@@ -14,8 +16,24 @@ public class WashingPowder extends Product {
         this.clothsTypeForWashing = clothsTypeForWashing;
     }
 
+    public Long getId() {
+        return id;
+    }
+    public String getName(){
+        return name;
+    }
+    public BigDecimal getPrice(){
+        return price;
+    }
+    public String getDescription(){
+        return description;
+    }
+    public ClothsTypeForWashing getEnum() {
+        return clothsTypeForWashing;
+    }
+
     @Override
     public void describe() {
-        DisplayUtil.displayInLine("ID: " + id + "\nCloths type for washing: " + clothsTypeForWashing + "\nName: " + name + "\nDescription: " + description + "\nPrice: " + price + "pln");
+        utils.DisplayUtil.describeThis(this.getId(), this.getEnum(), this.getName(), this.getDescription(), this.getPrice());
     }
 }
