@@ -1,3 +1,5 @@
+import domain.*;
+
 import domain.Product;
 import domain.Razor;
 import domain.Soap;
@@ -35,10 +37,33 @@ public class ShopServiceApp {
         products.add(razor);
 
         for (Product product : products) {
-            //TODO proszę zaimplementować wyświetlanie info o produkcie można skorzystać z metody describe
             space();
             product.describe();
         }
+
+        space();
+        //sekcja magazynu
+        List<Item> catalog = new ArrayList<>();
+
+
+        Item item1 = new Item(1L, "Mydło", soap, 20);
+        Item item2 = new Item(2L, "Mydło Biały Jeleń", soapJelen, 13);
+        Item item3 = new Item(3L, "Wizir", washingPowder, 5);
+        Item item4 = new Item(4L, "Ariel", washingPowderAriel, 4);
+        Item item5 = new Item(5L, "Gillete", razor, 8);
+
+        Magazine magazine1 = new Magazine(1L, "BigLogistic", "ul. Bydgoska 2, 86-300 Grudziadz", catalog);
+        catalog.add(item1);
+        catalog.add(item2);
+        catalog.add(item3);
+        catalog.add(item4);
+        catalog.add(item5);
+
+
+        magazine1.sizeCatalog();
+        space();
+        magazine1.sizeOfItemInCatalog(item1);
+
 
     }
 }

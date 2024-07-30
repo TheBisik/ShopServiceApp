@@ -1,6 +1,8 @@
 package domain;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Product {
 
