@@ -1,33 +1,31 @@
 package domain;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static utils.DisplayUtil.displayInLine;
 import static utils.DisplayUtil.space;
 
-public class Magazine {
-    private long idMagazine;
-    private String nameMagazine;
-    private String adressMagazine;
-    private List<Item> catalog;
+public class Storage {
+    private long id;
+    private String storageName;
+    private List<Metric> catalog;
+    private Address storageAddress; //todo stworzyć klase Address
 
 
-
-    public Magazine(long idMagazine, String nameMagazine, String adressMagazine, List<Item> catalog) {
-        this.idMagazine = idMagazine;
-        this.nameMagazine = nameMagazine;
-        this.adressMagazine = adressMagazine;
+    public Storage(long id, String storageName, Address storageAddress, List<Metric> catalog) {
+        this.id = id;
+        this.storageName = storageName;
+        this.storageAddress = storageAddress;//TODO
         this.catalog = catalog;
     }
 
-    public void addProduct(Item item) {
-        catalog.add(item);
+    public void addMetric(Metric metric) {
+        catalog.add(metric);
     }
 
-    public void removeProduct(Item item) {
-        catalog.remove(item);
+    public void removeMetric(Metric metric) {
+        catalog.remove(metric);
     }
 
     public void sizeCatalog() {
@@ -35,9 +33,9 @@ public class Magazine {
         displayInLine("Ilość Przedmiotów w katalogu:\t" + catalog.size() + " pozycji.");
     }
 
-    public void sizeOfItemInCatalog(Item item) {
-        var name = item.getName();
-        var count = item.getCount();
+    public void  sizeOfItemInCatalog(Metric metric) {
+        var name = metric.getName();
+        var count = metric.getAmount();
         displayInLine("Nazwa Produktu:\t" + name + "\nIlość Przemiotów: \t" + count + " sztuk");
     }
 

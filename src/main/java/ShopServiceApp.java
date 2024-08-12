@@ -10,7 +10,9 @@ import enums.SoapType;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static utils.DisplayUtil.*;
 
@@ -43,27 +45,48 @@ public class ShopServiceApp {
 
         space();
         //sekcja magazynu
-        List<Item> catalog = new ArrayList<>();
+        List<Metric> catalog = new ArrayList<>();
 
 
-        Item item1 = new Item(1L, "Mydło", soap, 20);
-        Item item2 = new Item(2L, "Mydło Biały Jeleń", soapJelen, 13);
-        Item item3 = new Item(3L, "Wizir", washingPowder, 5);
-        Item item4 = new Item(4L, "Ariel", washingPowderAriel, 4);
-        Item item5 = new Item(5L, "Gillete", razor, 8);
+        Metric metric1 = new Metric(1L, "Mydło", soap, 20);
+        Metric metric2 = new Metric(2L, "Mydło Biały Jeleń", soapJelen, 13);
+        Metric metric3 = new Metric(3L, "Wizir", washingPowder, 5);
+        Metric metric4 = new Metric(4L, "Ariel", washingPowderAriel, 4);
+        Metric metric5 = new Metric(5L, "Gillete", razor, 8);
 
-        Magazine magazine1 = new Magazine(1L, "BigLogistic", "ul. Bydgoska 2, 86-300 Grudziadz", catalog);
-        catalog.add(item1);
-        catalog.add(item2);
-        catalog.add(item3);
-        catalog.add(item4);
-        catalog.add(item5);
+        Storage storage1 = new Storage(1L, "BigLogistic", "ul. Bydgoska 2, 86-300 Grudziadz", catalog);
+        catalog.add(metric1);
+        catalog.add(metric2);
+        catalog.add(metric3);
+        catalog.add(metric4);
+        catalog.add(metric5);
 
 
-        magazine1.sizeCatalog();
+        storage1.sizeCatalog();
         space();
-        magazine1.sizeOfItemInCatalog(item1);
+        storage1.sizeOfItemInCatalog(metric1);
+        Map<String, Storage> test = new HashMap<>();
+        test.put("Storage1", storage1);
+        test.put(null, storage1);
+        var s = test.get("Storage1");
 
+        Map<String,Address> addressDataBase = new HashMap<>();
+        addressDataBase.put("FirmaA", new Address());
+        addressDataBase.put("FirmaB", new Address());
+        addressDataBase.put("FirmaC", new Address());
+        addressDataBase.put("FirmaD", new Address());
+        addressDataBase.put("FirmaF", new Address());
+
+        class Company {
+            //klasa reprezentująca firmę
+            //CompanyAddress
+            //StorageAddress
+        }
+
+        class Companies {
+            //klasa reprezentująca zbiór firm
+            //getAddressDataBase ->  Map<String,Address> addressDataBas
+        }
 
     }
 }

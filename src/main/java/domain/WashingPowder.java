@@ -16,24 +16,16 @@ public class WashingPowder extends Product {
         this.clothsTypeForWashing = clothsTypeForWashing;
     }
 
-    public Long getId() {
-        return id;
-    }
-    public String getName(){
-        return name;
-    }
-    public BigDecimal getPrice(){
-        return price;
-    }
     public String getDescription(){
         return description;
     }
-    public ClothsTypeForWashing getEnum() {
+    public ClothsTypeForWashing getEnum() {//TODO do poprawy nazwa
         return clothsTypeForWashing;
     }
 
     @Override
     public void describe() {
-        utils.DisplayUtil.describeThis(this.getId(), this.getEnum(), this.getName(), this.getDescription(), this.getPrice());
+       //TODO do reimplementacji
+        //utils.DisplayUtil.describeThis(this.getId(), this.getEnum(), this.getName(), this.getDescription(), this.getPrice());
     }
 }

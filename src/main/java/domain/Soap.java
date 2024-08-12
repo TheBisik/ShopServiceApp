@@ -16,9 +16,6 @@ public class Soap extends Product {
         this.soapType = soapType;
     }
 
-    public Long getId() {
-        return id;
-    }
     public String getName(){
         return name;
     }
@@ -34,6 +31,6 @@ public class Soap extends Product {
 
     @Override
     public void describe() {
-        utils.DisplayUtil.describeThis(this.getId(), this.getEnum(), this.getName(), this.getDescription(), this.getPrice());
+    // do robić output informacji
     }
 }

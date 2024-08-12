@@ -21,5 +21,21 @@ public abstract class Product {
         this.description = description;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
     public abstract void describe();
 }

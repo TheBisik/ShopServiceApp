@@ -1,21 +1,19 @@
 package domain;
 
+import enums.ClothsTypeForWashing;
 import enums.CountOfBlades;
+import interfaces.StringCreator;
 import utils.DisplayUtil;
 
 import java.math.BigDecimal;
 
-public class Razor extends Product {
+public class Razor extends Product implements StringCreator {
 
     private CountOfBlades countOfBlades;
 
     public Razor(long id, String name, BigDecimal price, String description, CountOfBlades countOfBlades) {
         super(id, name, price, description);
         this.countOfBlades = countOfBlades;
-    }
-
-    public Long getId() {
-        return id;
     }
 
     public String getName() {
@@ -30,12 +28,17 @@ public class Razor extends Product {
         return description;
     }
 
-    public CountOfBlades getEnum() {
+    public CountOfBlades getCountOfBlades() {
         return countOfBlades;
     }
 
     @Override
     public void describe() {
-        utils.DisplayUtil.describeThis(this.getId(), this.getEnum(), this.getName(), this.getDescription(), this.getPrice());
+        utils.DisplayUtil.displayInLine(createString());
+    }
+
+    @Override
+    public String createString() {//TODO implementować też w pozostałych klasach
+        return "ID: " + id + "\nCloths type for washing: " + countOfBlades.name() + "\nName: " + name + "\nDescription: " + description + "\nPrice: " + price + "pln";
     }
 }
