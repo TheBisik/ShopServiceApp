@@ -1,13 +1,15 @@
 package domain;
 
 import enums.SoapType;
+import interfaces.StringCreator;
 
 //import static com.sun.beans.introspect.PropertyInfo.Name.description;
 
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Soap extends Product {
+public class Soap extends Product implements StringCreator {
 
     private SoapType soapType;
 
@@ -31,6 +33,12 @@ public class Soap extends Product {
 
     @Override
     public void describe() {
-    // do robić output informacji
+        utils.DisplayUtil.displayInLine(createString());
+    }
+
+    @Override
+    public String createString() {
+        return "ID: " + this.id + ", Type of soap: " + this.soapType + ", Name: " + this.name + ", Price: " + this.price + ", Description: " + this.description;
+
     }
 }

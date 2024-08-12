@@ -6,7 +6,7 @@ import java.util.List;
 
 public abstract class Product {
 
-    long id;
+    final long id;
 
     protected String name; //TODO proszę poczytać o modyfikatorze dostępu protected // x
 

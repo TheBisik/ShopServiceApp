@@ -1,13 +1,14 @@
 package domain;
 
 import enums.ClothsTypeForWashing;
+import interfaces.StringCreator;
 
 
 import java.math.BigDecimal;
 
 
 
-public class WashingPowder extends Product {
+public class WashingPowder extends Product implements StringCreator {
 
     private ClothsTypeForWashing clothsTypeForWashing;
 
@@ -25,7 +26,14 @@ public class WashingPowder extends Product {
 
     @Override
     public void describe() {
-       //TODO do reimplementacji
-        //utils.DisplayUtil.describeThis(this.getId(), this.getEnum(), this.getName(), this.getDescription(), this.getPrice());
+        utils.DisplayUtil.displayInLine(createString());
+
+    }
+
+    @Override
+    public String createString() {
+        return "ID: " + this.id +  ", Type of washing powder: " + this.clothsTypeForWashing + ", Name: " + this.name + ", Price: " + this.price + ", Description: " + this.description;
+
+
     }
 }

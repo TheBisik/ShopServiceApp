@@ -45,7 +45,7 @@ public class ShopServiceApp {
 
         space();
         //sekcja magazynu
-        List<Metric> catalog = new ArrayList<>();
+
 
 
         Metric metric1 = new Metric(1L, "Mydło", soap, 20);
@@ -54,7 +54,8 @@ public class ShopServiceApp {
         Metric metric4 = new Metric(4L, "Ariel", washingPowderAriel, 4);
         Metric metric5 = new Metric(5L, "Gillete", razor, 8);
 
-        Storage storage1 = new Storage(1L, "BigLogistic", "ul. Bydgoska 2, 86-300 Grudziadz", catalog);
+        List<Metric> catalog = new ArrayList<>();
+        CompanyStorage companyStorage1 = new CompanyStorage(1L, "BigLogistic", new Address("Adamowicza", "23/2-6", "86-302", "Grudziadz"), catalog);
         catalog.add(metric1);
         catalog.add(metric2);
         catalog.add(metric3);
@@ -62,20 +63,20 @@ public class ShopServiceApp {
         catalog.add(metric5);
 
 
-        storage1.sizeCatalog();
+        companyStorage1.sizeCatalog();
         space();
-        storage1.sizeOfItemInCatalog(metric1);
-        Map<String, Storage> test = new HashMap<>();
-        test.put("Storage1", storage1);
-        test.put(null, storage1);
+        companyStorage1.sizeOfItemInCatalog(metric1);
+        Map<String, CompanyStorage> test = new HashMap<>();
+        test.put("Storage1", companyStorage1);
+        test.put(null, companyStorage1);
         var s = test.get("Storage1");
 
         Map<String,Address> addressDataBase = new HashMap<>();
-        addressDataBase.put("FirmaA", new Address());
-        addressDataBase.put("FirmaB", new Address());
-        addressDataBase.put("FirmaC", new Address());
-        addressDataBase.put("FirmaD", new Address());
-        addressDataBase.put("FirmaF", new Address());
+        addressDataBase.put("FirmaA", new Address("ul. Janka", "22/6", "86-542", "Testowo"));
+        addressDataBase.put("FirmaB", new Address("ul. Torunska", "26", "41-323", "Adamowo"));
+        addressDataBase.put("FirmaC", new Address("Matawy", "23", "86-170", "Nowe"));
+        addressDataBase.put("FirmaD", new Address("Tryl", "2", "86-170", "Nowe"));
+        addressDataBase.put("FirmaF", new Address("Tryl", "3", "86-170", "Nowe"));
 
         class Company {
             //klasa reprezentująca firmę
@@ -90,3 +91,7 @@ public class ShopServiceApp {
 
     }
 }
+
+
+
+

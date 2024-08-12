@@ -1,22 +1,21 @@
 package domain;
 
-
 import java.util.List;
 
 import static utils.DisplayUtil.displayInLine;
 import static utils.DisplayUtil.space;
 
-public class Storage {
-    private long id;
+public class CompanyStorage {
+    final private long id;
     private String storageName;
     private List<Metric> catalog;
-    private Address storageAddress; //todo stworzyć klase Address
+    final private Address storageAddress;
 
 
-    public Storage(long id, String storageName, Address storageAddress, List<Metric> catalog) {
+    public CompanyStorage(long id, String storageName, Address storageAddress, List<Metric> catalog) {
         this.id = id;
         this.storageName = storageName;
-        this.storageAddress = storageAddress;//TODO
+        this.storageAddress = storageAddress;
         this.catalog = catalog;
     }
 
@@ -39,12 +38,7 @@ public class Storage {
         displayInLine("Nazwa Produktu:\t" + name + "\nIlość Przemiotów: \t" + count + " sztuk");
     }
 
-    /* public void setMagazine(long idMagazine, String nameMagazine, String adressMagazine) {
-        var nameofcatalog = "catalog" + Long.toString(idMagazine);
-        var nameofmagazin = "magazine" + Long.toString(idMagazine);
-        List<Item> nameofcatalog = new ArrayList<>();
-        Magazine nameofmagazin = new Magazine(idMagazine, nameMagazine, adressMagazine, nameofcatalog);
-    } */
+
 }
 
 
