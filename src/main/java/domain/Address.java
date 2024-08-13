@@ -1,6 +1,6 @@
 package domain;
 
-public class  Address {
+public class Address {
     String Street, number, postalCode, city;
 
     public Address(String street, String number, String postalCode, String city) {
@@ -26,4 +26,5 @@ public class  Address {
         return city;
     }
 
+    //TODO settery
 }

@@ -22,14 +22,14 @@ public class ShopServiceApp {
         Soap soap = new Soap(1L, "Super Soap", BigDecimal.valueOf(24.90), "Mydło do higeny intymnej", SoapType.LIQUID);
         WashingPowder washingPowder = new WashingPowder(2L, "Wizir", BigDecimal.valueOf(16.20), "Podstawowy proszek do prania", ClothsTypeForWashing.COLOR);
 
-        //TODO proszę utworzyć po jeszcze jednym produkcie typu mydło i typu proszek do prania
+
 
         WashingPowder washingPowderAriel = new WashingPowder(3L,"Ariel", BigDecimal.valueOf(22.30),"Proszek Ariel, Do białych ubrań", ClothsTypeForWashing.WHITE);
         Soap soapJelen = new Soap(4L, "Bialy Jelen", BigDecimal.valueOf(23.40),"Bardzo podstawowe mydlo",SoapType.LIQUID);
         Razor razor = new Razor(5L,"Gillet", BigDecimal.valueOf(12.30), "Maszynka do golenia", CountOfBlades.FOUR);
         List<Product> products = new ArrayList<>();
 
-        //TODO proszę dodać te produkty powyżej do listy
+
 
         // Pytanie: Czemu InteliJ ni krzyczy, że coś jest nie tak w kodzie jesli jest dobrze?
         products.add(soap);
@@ -55,21 +55,17 @@ public class ShopServiceApp {
         Metric metric5 = new Metric(5L, "Gillete", razor, 8);
 
         List<Metric> catalog = new ArrayList<>();
-        CompanyStorage companyStorage1 = new CompanyStorage(1L, "BigLogistic", new Address("Adamowicza", "23/2-6", "86-302", "Grudziadz"), catalog);
         catalog.add(metric1);
         catalog.add(metric2);
         catalog.add(metric3);
         catalog.add(metric4);
         catalog.add(metric5);
 
+        CompanyStorage companyStorage1 = new CompanyStorage(1L, "BigLogistic", new Address("Adamowicza", "23/2-6", "86-302", "Grudziadz"), catalog);
 
-        companyStorage1.sizeCatalog();
+        companyStorage1.metricListSize();
         space();
-        companyStorage1.sizeOfItemInCatalog(metric1);
-        Map<String, CompanyStorage> test = new HashMap<>();
-        test.put("Storage1", companyStorage1);
-        test.put(null, companyStorage1);
-        var s = test.get("Storage1");
+        companyStorage1.productAmountInMetric(metric1);
 
         Map<String,Address> addressDataBase = new HashMap<>();
         addressDataBase.put("FirmaA", new Address("ul. Janka", "22/6", "86-542", "Testowo"));
@@ -78,17 +74,11 @@ public class ShopServiceApp {
         addressDataBase.put("FirmaD", new Address("Tryl", "2", "86-170", "Nowe"));
         addressDataBase.put("FirmaF", new Address("Tryl", "3", "86-170", "Nowe"));
 
-        class Company {
-            //klasa reprezentująca firmę
-            //CompanyAddress
-            //StorageAddress
-        }
-
         class Companies {
+            //TODO
             //klasa reprezentująca zbiór firm
             //getAddressDataBase ->  Map<String,Address> addressDataBas
         }
-
     }
 }
 

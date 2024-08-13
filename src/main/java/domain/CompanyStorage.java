@@ -8,31 +8,31 @@ import static utils.DisplayUtil.space;
 public class CompanyStorage {
     final private long id;
     private String storageName;
-    private List<Metric> catalog;
+    private List<Metric> metricList;
     final private Address storageAddress;
 
 
-    public CompanyStorage(long id, String storageName, Address storageAddress, List<Metric> catalog) {
+    public CompanyStorage(long id, String storageName, Address storageAddress, List<Metric> metricList) {
         this.id = id;
         this.storageName = storageName;
         this.storageAddress = storageAddress;
-        this.catalog = catalog;
+        this.metricList = metricList;
     }
 
     public void addMetric(Metric metric) {
-        catalog.add(metric);
+        metricList.add(metric);
     }
 
     public void removeMetric(Metric metric) {
-        catalog.remove(metric);
+        metricList.remove(metric);
     }
 
-    public void sizeCatalog() {
+    public void metricListSize() {
         space();
-        displayInLine("Ilość Przedmiotów w katalogu:\t" + catalog.size() + " pozycji.");
+        displayInLine("Ilość Przedmiotów w katalogu:\t" + metricList.size() + " pozycji.");
     }
 
-    public void  sizeOfItemInCatalog(Metric metric) {
+    public void productAmountInMetric(Metric metric) {
         var name = metric.getName();
         var count = metric.getAmount();
         displayInLine("Nazwa Produktu:\t" + name + "\nIlość Przemiotów: \t" + count + " sztuk");
