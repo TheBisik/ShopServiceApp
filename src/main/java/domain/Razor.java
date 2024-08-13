@@ -38,7 +38,7 @@ public class Razor extends Product implements StringCreator {
     }
 
     @Override
-    public String createString() {//TODO implementować też w pozostałych klasach
+    public String createString() {
         return "ID: " + id + "\nCloths type for washing: " + countOfBlades.name() + "\nName: " + name + "\nDescription: " + description + "\nPrice: " + price + "pln";
     }
 }

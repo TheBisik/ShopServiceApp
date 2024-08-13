@@ -54,29 +54,39 @@ public class ShopServiceApp {
         Metric metric4 = new Metric(4L, "Ariel", washingPowderAriel, 4);
         Metric metric5 = new Metric(5L, "Gillete", razor, 8);
 
+
+
         List<Metric> catalog = new ArrayList<>();
-        CompanyStorage companyStorage1 = new CompanyStorage(1L, "BigLogistic", new Address("Adamowicza", "23/2-6", "86-302", "Grudziadz"), catalog);
+        CompanyStorage bigLogisticStorage1;
+        bigLogisticStorage1 = new CompanyStorage(1L, "Magazyn 1", new Address("ul. Wlodka","2","86-300","Grudziadz", "Kujawsko-Pomorskie","Poland"), catalog);
         catalog.add(metric1);
         catalog.add(metric2);
         catalog.add(metric3);
         catalog.add(metric4);
         catalog.add(metric5);
 
+        List<CompanyStorage> companyBigLogisticsStoragesList = new ArrayList<>();
+        companyBigLogisticsStoragesList.add(bigLogisticStorage1);
 
-        companyStorage1.sizeCatalog();
-        space();
-        companyStorage1.sizeOfItemInCatalog(metric1);
+        Company bigLogistics;
+        bigLogistics = new Company(1L,"BigLogistics", new Address("Bydgoska", "25/6c", "86-300", "Grudziadz", "Kujawsko-Pomorskie","Poland"), companyBigLogisticsStoragesList);
+
+
+
+
+        /* Przykład Listy indeksowanej
         Map<String, CompanyStorage> test = new HashMap<>();
-        test.put("Storage1", companyStorage1);
-        test.put(null, companyStorage1);
+        test.put("Storage1", bigLogisticStorage1);
+        test.put(null, bigLogisticStorage1);
         var s = test.get("Storage1");
+        */
 
         Map<String,Address> addressDataBase = new HashMap<>();
-        addressDataBase.put("FirmaA", new Address("ul. Janka", "22/6", "86-542", "Testowo"));
-        addressDataBase.put("FirmaB", new Address("ul. Torunska", "26", "41-323", "Adamowo"));
-        addressDataBase.put("FirmaC", new Address("Matawy", "23", "86-170", "Nowe"));
-        addressDataBase.put("FirmaD", new Address("Tryl", "2", "86-170", "Nowe"));
-        addressDataBase.put("FirmaF", new Address("Tryl", "3", "86-170", "Nowe"));
+        addressDataBase.put("FirmaA", new Address("ul. Janka", "22/6", "86-542", "Testowo", "Pomorskie","Poland"));
+        addressDataBase.put("FirmaB", new Address("ul. Torunska", "26", "41-323", "Adamowo", "Wielkopolskie","Poland"));
+        addressDataBase.put("FirmaC", new Address("Matawy", "23", "86-170", "Nowe", "Pomorskie","Poland"));
+        addressDataBase.put("FirmaD", new Address("Tryl", "2", "86-170", "Nowe", "Kujawsko-Pomorskie","Poland"));
+        addressDataBase.put("FirmaF", new Address("Tryl", "3", "86-170", "Nowe", "Kujawsko-Pomorskie","Poland"));
 
         class Company {
             //klasa reprezentująca firmę
@@ -89,7 +99,17 @@ public class ShopServiceApp {
             //getAddressDataBase ->  Map<String,Address> addressDataBas
         }
 
+
+
+        bigLogistics.getStorageAmount();
+
+        bigLogisticStorage1.sizeCatalog();
+
+        space();
+        bigLogisticStorage1.sizeOfItemInCatalog(metric1);
+
     }
+
 }
 
 

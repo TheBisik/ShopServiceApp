@@ -9,7 +9,7 @@ public class CompanyStorage {
     final private long id;
     private String storageName;
     private List<Metric> catalog;
-    final private Address storageAddress;
+    private Address storageAddress;
 
 
     public CompanyStorage(long id, String storageName, Address storageAddress, List<Metric> catalog) {
@@ -19,6 +19,10 @@ public class CompanyStorage {
         this.catalog = catalog;
     }
 
+    public void setMetrics(List<Metric> metrics) {
+        this.catalog = metrics;
+    }
+
     public void addMetric(Metric metric) {
         catalog.add(metric);
     }
@@ -26,6 +30,7 @@ public class CompanyStorage {
     public void removeMetric(Metric metric) {
         catalog.remove(metric);
     }
+
 
     public void sizeCatalog() {
         space();
