@@ -8,9 +8,7 @@ final public class Companies {
 
     private List<Company> companyList = new ArrayList<>();
 
-    public Companies() {
-        displayInLine("INITIALIZED COMPANIES");
-    }
+
     public void addCompany(Company company) {
         companyList.add(company);
     }

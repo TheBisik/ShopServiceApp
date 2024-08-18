@@ -1,9 +1,9 @@
 package domain;
 
-import interfaces.AddressGetter;
+import interfaces.StringCreator;
 
 
-public class Address implements AddressGetter {
+public class Address implements StringCreator {
     final private String street, number, postalCode, city, state, country;
 
     public Address(String street, String number, String postalCode, String city, String state, String country) {
@@ -16,7 +16,7 @@ public class Address implements AddressGetter {
     }
 
         @Override
-        public String getAddress() {
+        public String createString() {
             return "\nLokalizacja: " + this.street + " " + number + ", " + city + ", " + postalCode + ", " + state + ", " + country;
         }
 

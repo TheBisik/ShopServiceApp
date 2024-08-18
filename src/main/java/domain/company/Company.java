@@ -18,12 +18,40 @@ public class Company {
         this.address = address;
         this.companyStorageList = companyStorageList;
     }
-    // Przykład Firmy bez magazynu
-    /*public Company(long id, String companyName, Address address) {
+
+    public Company(long id, String companyName, Address address) {
         this.id = id;
         this.companyName = companyName;
         this.address = address;
-    }*/
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public List<CompanyStorage> getCompanyStorageList() {
+        return companyStorageList;
+    }
+
+    public void setCompanyStorageList(List<CompanyStorage> companyStorageList) {
+        this.companyStorageList = companyStorageList;
+    }
 
     public long getId() {
         return id;
