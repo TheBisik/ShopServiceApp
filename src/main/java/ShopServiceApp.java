@@ -114,4 +114,4 @@ public class ShopServiceApp {
 
 
 
-
+//todo  equals i hashcode
