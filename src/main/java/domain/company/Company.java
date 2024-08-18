@@ -25,6 +25,34 @@ public class Company {
         this.address = address;
     }*/
 
+    public long getId() {
+        return id;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public List<CompanyStorage> getCompanyStorageList() {
+        return companyStorageList;
+    }
+
+    public void setCompanyStorageList(List<CompanyStorage> companyStorageList) {
+        this.companyStorageList = companyStorageList;
+    }
+
     public void sizeOfItemInCatalog() {
         displayInLine("Ilość Przedmiotów w katalogu:\t" + this.companyStorageList.size() + " pozycji.");
     }

@@ -1,31 +1,25 @@
 package domain.company;
-import java.util.HashMap;
-import java.util.Map;
 
+import java.util.ArrayList;
+import java.util.List;
 import static utils.DisplayUtil.displayInLine;
-
 
 final public class Companies {
 
-    final private Map<String, Company> companyAddressDataBase = new HashMap<>();
+    private List<Company> companyList = new ArrayList<>();
 
     public Companies() {
-        displayInLine("companyAddressDataBase Initialize");
+        displayInLine("INITIALIZED COMPANIES");
+    }
+    public void addCompany(Company company) {
+        companyList.add(company);
+    }
+    public void removeCompany(Company company) {
+        companyList.remove(company);
+    }
+    public List<Company> getCompanyList() {
+        return companyList;
     }
 
-    public Map<String, Company> getCompanyAddressDataBase() {
-        return companyAddressDataBase;
-    }
-
-    public void addCompany(String companyName, Company company) {
-        companyAddressDataBase.put(companyName, company);
-    }
-    public Company getCompany(String companyName) {
-        return companyAddressDataBase.get(companyName);
-    }
-
-    public void removeCompany(String companyName) {
-        companyAddressDataBase.remove(companyName);
-    }
 
 }

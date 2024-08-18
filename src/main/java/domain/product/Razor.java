@@ -5,6 +5,8 @@ import interfaces.StringCreator;
 
 import java.math.BigDecimal;
 
+import static utils.DisplayUtil.displayInLine;
+
 public class Razor extends Product implements StringCreator {
 
     private CountOfBlades countOfBlades;
@@ -31,8 +33,7 @@ public class Razor extends Product implements StringCreator {
     }
 
     @Override
-    public void describe() {
-        utils.DisplayUtil.displayInLine(createString());
+    public void describe() { displayInLine(createString());
     }
 
     @Override

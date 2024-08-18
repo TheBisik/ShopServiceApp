@@ -20,7 +20,7 @@ public class WashingPowder extends Product implements StringCreator {
     public String getDescription(){
         return description;
     }
-    public ClothsTypeForWashing getEnum() {//TODO do poprawy nazwa
+    public ClothsTypeForWashing getEnum() {
         return clothsTypeForWashing;
     }
 

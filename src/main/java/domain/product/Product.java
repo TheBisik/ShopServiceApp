@@ -48,6 +48,6 @@ public abstract class Product {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, price, description);
+        return (Objects.hashCode(id) * Objects.hashCode(name) * Objects.hashCode(price) * Objects.hashCode(description));
     }
 }
