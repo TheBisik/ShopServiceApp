@@ -1,4 +1,6 @@
-package domain;
+package domain.company;
+
+import domain.Address;
 
 import java.util.List;
 
@@ -23,7 +25,7 @@ public class Company {
         this.address = address;
     }*/
 
-    public void getStorageAmount() {
+    public void sizeOfItemInCatalog() {
         displayInLine("Ilość Przedmiotów w katalogu:\t" + this.companyStorageList.size() + " pozycji.");
     }
 

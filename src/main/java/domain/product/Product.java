@@ -1,16 +1,15 @@
-package domain;
+package domain.product;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
 
 public abstract class Product {
 
     final long id;
 
-    protected String name; //TODO proszę poczytać o modyfikatorze dostępu protected // x
+    protected String name;
 
-    protected BigDecimal price; // TODO: Proszę poczytać o tym typie, ma on zastosowanie w rozliczeniach walutowych
+    protected BigDecimal price;
 
     protected String description;
 
@@ -38,4 +37,17 @@ public abstract class Product {
     }
 
     public abstract void describe();
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return id == product.id && Objects.equals(name, product.name) && Objects.equals(price, product.price) && Objects.equals(description, product.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, price, description);
+    }
 }

@@ -1,9 +1,7 @@
-package domain;
+package domain.product;
 
-import enums.ClothsTypeForWashing;
 import enums.CountOfBlades;
 import interfaces.StringCreator;
-import utils.DisplayUtil;
 
 import java.math.BigDecimal;
 
