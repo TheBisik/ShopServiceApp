@@ -1,13 +1,13 @@
 import domain.Address;
 
-import domain.company.Companies;
-import domain.product.Product;
-import domain.product.Razor;
-import domain.product.Soap;
-import domain.product.WashingPowder;
-import domain.company.Company;
-import domain.company.CompanyStorage;
-import domain.metric.Metric;
+import main.java.domain.Companies;
+import main.java.domain.Product;
+import main.java.domain.Razor;
+import main.java.domain.Soap;
+import main.java.domain.WashingPowder;
+import main.java.domain.Company;
+import main.java.domain.CompanyStorage;
+import main.java.domain.Metric;
 
 import enums.ClothsTypeForWashing;
 import enums.CountOfBlades;

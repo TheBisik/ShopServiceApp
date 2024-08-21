@@ -1,4 +1,4 @@
-package domain.product;
+package main.java.domain;
 
 import enums.ClothsTypeForWashing;
 import interfaces.StringCreator;

@@ -1,6 +1,4 @@
-package domain.metric;
-
-import domain.product.Product;
+package main.java.domain;
 
 public class Metric {
     private long id; // id pozycji

@@ -1,7 +1,6 @@
-package domain.company;
+package main.java.domain;
 
 import domain.Address;
-import domain.metric.Metric;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package domain.product;
+package main.java.domain;
 
 import java.math.BigDecimal;
 import java.util.Objects;
