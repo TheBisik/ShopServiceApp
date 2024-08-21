@@ -1,4 +1,4 @@
-package domain;
+package main.java.domain;
 
 import enums.ClothsTypeForWashing;
 import interfaces.StringCreator;
@@ -20,7 +20,7 @@ public class WashingPowder extends Product implements StringCreator {
     public String getDescription(){
         return description;
     }
-    public ClothsTypeForWashing getEnum() {//TODO do poprawy nazwa
+    public ClothsTypeForWashing getEnum() {
         return clothsTypeForWashing;
     }
 
@@ -32,7 +32,7 @@ public class WashingPowder extends Product implements StringCreator {
 
     @Override
     public String createString() {
-        return "ID: " + this.id +  ", Type of washing powder: " + this.clothsTypeForWashing + ", Name: " + this.name + ", Price: " + this.price + ", Description: " + this.description;
+        return "ID: " + this.id +  "\nType of washing powder: " + this.clothsTypeForWashing + "\nName: " + this.name + "\nPrice: " + this.price + "\nDescription: " + this.description;
 
 
     }

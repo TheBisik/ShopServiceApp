@@ -1,30 +1,23 @@
 package domain;
 
-public class Address {
-    String Street, number, postalCode, city;
+import interfaces.AddressGetter;
 
-    public Address(String street, String number, String postalCode, String city) {
-        this.Street = street;
+
+public class Address implements AddressGetter {
+    final private String street, number, postalCode, city, state, country;
+
+    public Address(String street, String number, String postalCode, String city, String state, String country) {
+        this.street = street;
         this.number = number;
         this.postalCode = postalCode;
         this.city = city;
+        this.state = state;
+        this.country = country;
     }
 
-    public String getStreet() {
-        return Street;
-    }
+        @Override
+        public String getAddress() {
+            return "\nLokalizacja: " + this.street + " " + number + ", " + city + ", " + postalCode + ", " + state + ", " + country;
+        }
 
-    public String getNumber() {
-        return number;
-    }
-
-    public String getPostalCode() {
-        return postalCode;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    //TODO settery
 }

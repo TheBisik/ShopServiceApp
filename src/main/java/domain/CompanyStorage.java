@@ -1,4 +1,6 @@
-package domain;
+package main.java.domain;
+
+import domain.Address;
 
 import java.util.List;
 
@@ -27,15 +29,31 @@ public class CompanyStorage {
         metricList.remove(metric);
     }
 
+    public void getCompanyStorage() {
+        displayInLine("ID: " + id + "\nName: " + storageName + "\nAddress: " + storageAddress);
+    }
+
+
+
     public void metricListSize() {
         space();
         displayInLine("Ilość Przedmiotów w katalogu:\t" + metricList.size() + " pozycji.");
     }
 
-    public void productAmountInMetric(Metric metric) {
-        var name = metric.getName();
-        var count = metric.getAmount();
-        displayInLine("Nazwa Produktu:\t" + name + "\nIlość Przemiotów: \t" + count + " sztuk");
+    public void metricList() {
+        space();
+        displayInLine("Ilość Przedmiotów w katalogu:\t" + metricList.size() + " pozycji.");
+        for (int i = 0; i < metricList.size(); i++) {
+            productAmountInMetric(metricList.get(i));
+        }
+    }
+
+    public void productAmountInMetric(Metric metricList) {
+        var name = metricList.getName();
+        var count = metricList.getAmount();
+        var id = metricList.getId();
+        space();
+        displayInLine("ID: "+ id + "\nNazwa Produktu:\t" + name + "\nIlość Przemiotów: \t" + count + " sztuk");
     }
 
 

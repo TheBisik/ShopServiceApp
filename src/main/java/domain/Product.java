@@ -1,8 +1,7 @@
-package domain;
+package main.java.domain;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
 
 public abstract class Product {
 
@@ -38,4 +37,17 @@ public abstract class Product {
     }
 
     public abstract void describe();
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return id == product.id && Objects.equals(name, product.name) && Objects.equals(price, product.price) && Objects.equals(description, product.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return (Objects.hashCode(id) * Objects.hashCode(name) * Objects.hashCode(price) * Objects.hashCode(description));
+    }
 }
