@@ -19,11 +19,11 @@ public class Company {
         this.companyStorageList = companyStorageList;
     }
     // Przykład Firmy bez magazynu
-    /*public Company(long id, String companyName, Address address) {
+    public Company(long id, String companyName, Address address) {
         this.id = id;
         this.companyName = companyName;
         this.address = address;
-    }*/
+    }
 
     public long getId() {
         return id;

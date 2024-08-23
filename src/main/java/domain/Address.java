@@ -1,9 +1,9 @@
 package domain;
 
-import interfaces.AddressGetter;
+import static utils.DisplayUtil.displayInLine;
 
 
-public class Address implements AddressGetter {
+public class Address {
     final private String street, number, postalCode, city, state, country;
 
     public Address(String street, String number, String postalCode, String city, String state, String country) {
@@ -15,9 +15,9 @@ public class Address implements AddressGetter {
         this.country = country;
     }
 
-        @Override
-        public String getAddress() {
-            return "\nLokalizacja: " + this.street + " " + number + ", " + city + ", " + postalCode + ", " + state + ", " + country;
+        public void getAddress() {
+            displayInLine("\nLokalizacja: " + this.street + " " + number + ", " + city + ", " + postalCode + ", " + state + ", " + country);
         }
+
 
 }

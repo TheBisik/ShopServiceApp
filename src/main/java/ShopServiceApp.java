@@ -95,21 +95,24 @@ public class ShopServiceApp {
         space();
         selector();
 
+
+
         //tworzenie bazy danych adresów firm
-        Companies companyAddressDataBase = new Companies();
+        Companies companiesList;
+        companiesList = new Companies();
 
         //dodawnie firmy do bazy danych
-        companyAddressDataBase.addCompany(bigLogistics);
+        companiesList.addCompany(bigLogistics);
 
         //testowanie listy
-        String test = companyAddressDataBase.getCompanyList().get(0).getCompanyName();
+        String test = companiesList.getCompanyList().get(0).getCompanyName();
         displayInLine(test);
-
-        //hash code dla proszku do prania
-        System.out.println(washingPowder.hashCode());
 
         //usuawnie z listy
         //companyAddressDataBase.removeCompany(bigLogistics);
+
+        //hash code dla proszku do prania
+        System.out.println(washingPowder.hashCode());
     }
 }
 
