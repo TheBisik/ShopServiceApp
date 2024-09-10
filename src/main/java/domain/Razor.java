@@ -3,8 +3,9 @@ package domain;
 import enums.CountOfBlades;
 import interfaces.StringCreator;
 
-
 import java.math.BigDecimal;
+
+import static utils.DisplayUtil.displayInLine;
 
 public class Razor extends Product implements StringCreator {
 
@@ -33,11 +34,11 @@ public class Razor extends Product implements StringCreator {
 
     @Override
     public void describe() {
-        utils.DisplayUtil.displayInLine(createString());
+        displayInLine(createString());
     }
 
     @Override
-    public String createString() {//TODO implementować też w pozostałych klasach
+    public String createString() {
         return "ID: " + id + "\nCloths type for washing: " + countOfBlades.name() + "\nName: " + name + "\nDescription: " + description + "\nPrice: " + price + "pln";
     }
 }

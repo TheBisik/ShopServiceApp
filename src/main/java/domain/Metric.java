@@ -1,7 +1,5 @@
 package domain;
 
-import java.math.BigDecimal;
-
 public class Metric {
     private long id; // id pozycji
     private String name; // nazwa pozycji
@@ -10,7 +8,7 @@ public class Metric {
 
     public Metric(long id, String name, Product product, int amount) {
         this.id = id;
-        this.name = product.name;
+        this.name = product.getName();
         this.amount = amount;
     }
 

@@ -3,10 +3,6 @@ package domain;
 import enums.SoapType;
 import interfaces.StringCreator;
 
-//import static com.sun.beans.introspect.PropertyInfo.Name.description;
-
-
-import java.io.Serializable;
 import java.math.BigDecimal;
 
 public class Soap extends Product implements StringCreator {
@@ -38,7 +34,7 @@ public class Soap extends Product implements StringCreator {
 
     @Override
     public String createString() {
-        return "ID: " + this.id + ", Type of soap: " + this.soapType + ", Name: " + this.name + ", Price: " + this.price + ", Description: " + this.description;
+        return "ID: " + this.id + "\nType of soap: " + this.soapType + "\nName: " + this.name + "\nPrice: " + this.price + "\nDescription: " + this.description;
 
     }
 }

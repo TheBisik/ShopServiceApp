@@ -1,30 +1,22 @@
 package domain;
 
-public class Address {
-    String Street, number, postalCode, city;
+import static utils.DisplayUtil.displayInLine;
 
-    public Address(String street, String number, String postalCode, String city) {
-        this.Street = street;
+
+public class Address {
+    final private String street, number, postalCode, city, state, country;
+
+    public Address(String street, String number, String postalCode, String city, String state, String country) {
+        this.street = street;
         this.number = number;
         this.postalCode = postalCode;
         this.city = city;
+        this.state = state;
+        this.country = country;
     }
 
-    public String getStreet() {
-        return Street;
-    }
+        public void getAddress() {
+            displayInLine("\nLokalizacja: " + this.street + " " + number + ", " + city + ", " + postalCode + ", " + state + ", " + country);
+        }
 
-    public String getNumber() {
-        return number;
-    }
-
-    public String getPostalCode() {
-        return postalCode;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    //TODO settery
 }
