@@ -1,5 +1,6 @@
 package domain;
 
+import Exceptions.MySpecException;
 import utils.EmailValidator;
 
 public abstract class User {
@@ -10,11 +11,11 @@ public abstract class User {
     public User(long id, String password, String email) {
         this.id = id;
         this.password = password;
-        if (EmailValidator.isValidEmail(email)) {
+       // if (EmailValidator.isValidEmail(email)) {
             this.email = email;
-        } else {
+       /* } else {
             throw new IllegalArgumentException("Invalid email address");
-        }
+        }*/
     }
 
     public long getId() {
@@ -33,11 +34,12 @@ public abstract class User {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(String email) throws MySpecException {
         if (EmailValidator.isValidEmail(email)) {
             this.email = email;
         } else {
-            throw new IllegalArgumentException("Invalid email address");
+            //throw new IllegalArgumentException("Invalid email address");
+            throw new MySpecException("Test exception");
         }
     }
 }
