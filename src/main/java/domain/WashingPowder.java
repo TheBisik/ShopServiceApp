@@ -1,11 +1,8 @@
-package main.java.domain;
+package domain;
 
 import enums.ClothsTypeForWashing;
 import interfaces.StringCreator;
-
-
 import java.math.BigDecimal;
-
 
 
 public class WashingPowder extends Product implements StringCreator {

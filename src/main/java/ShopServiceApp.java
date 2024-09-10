@@ -1,13 +1,4 @@
-import domain.Address;
-
-import main.java.domain.Companies;
-import main.java.domain.Product;
-import main.java.domain.Razor;
-import main.java.domain.Soap;
-import main.java.domain.WashingPowder;
-import main.java.domain.Company;
-import main.java.domain.CompanyStorage;
-import main.java.domain.Metric;
+import domain.*;
 
 import enums.ClothsTypeForWashing;
 import enums.CountOfBlades;
@@ -16,6 +7,7 @@ import enums.SoapType;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import static utils.DisplayUtil.*;
 
@@ -107,12 +99,15 @@ public class ShopServiceApp {
         //testowanie listy
         String test = companiesList.getCompanyList().get(0).getCompanyName();
         displayInLine(test);
-
+        space();
         //usuawnie z listy
         //companyAddressDataBase.removeCompany(bigLogistics);
+        Map<String, Company> companyAddressDataBase = companiesList.getCompanyAddressDataBase();
+        companiesList.displayCompanyList();
 
+        space();
         //hash code dla proszku do prania
-        System.out.println(washingPowder.hashCode());
+        displayInLine(Integer.toString(washingPowder.hashCode()));
     }
 }
 

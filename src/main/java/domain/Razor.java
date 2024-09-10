@@ -1,4 +1,4 @@
-package main.java.domain;
+package domain;
 
 import enums.CountOfBlades;
 import interfaces.StringCreator;
@@ -33,7 +33,8 @@ public class Razor extends Product implements StringCreator {
     }
 
     @Override
-    public void describe() { displayInLine(createString());
+    public void describe() {
+        displayInLine(createString());
     }
 
     @Override

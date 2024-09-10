@@ -1,6 +1,5 @@
-package main.java.domain;
+package domain;
 
-import domain.Address;
 
 import java.util.List;
 

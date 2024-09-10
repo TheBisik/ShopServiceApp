@@ -1,10 +1,7 @@
-package main.java.domain;
+package domain;
 
 import enums.SoapType;
 import interfaces.StringCreator;
-
-//import static com.sun.beans.introspect.PropertyInfo.Name.description;
-
 
 import java.math.BigDecimal;
 

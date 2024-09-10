@@ -19,5 +19,4 @@ public class Address {
             displayInLine("\nLokalizacja: " + this.street + " " + number + ", " + city + ", " + postalCode + ", " + state + ", " + country);
         }
 
-
 }
