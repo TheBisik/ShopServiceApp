@@ -1,7 +1,7 @@
-package domain;
+package prv.bisik.domain;
 
-import enums.ClothsTypeForWashing;
-import interfaces.StringCreator;
+import prv.bisik.enums.ClothsTypeForWashing;
+import prv.bisik.interfaces.StringCreator;
 import java.math.BigDecimal;
 
 
@@ -23,7 +23,7 @@ public class WashingPowder extends Product implements StringCreator {
 
     @Override
     public void describe() {
-        utils.DisplayUtil.displayInLine(createString());
+        prv.bisik.utils.DisplayUtil.displayInLine(createString());
 
     }
 

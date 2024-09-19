@@ -1,7 +1,7 @@
-package domain;
+package prv.bisik.domain;
 
-import enums.SoapType;
-import interfaces.StringCreator;
+import prv.bisik.enums.SoapType;
+import prv.bisik.interfaces.StringCreator;
 
 import java.math.BigDecimal;
 
@@ -29,7 +29,7 @@ public class Soap extends Product implements StringCreator {
 
     @Override
     public void describe() {
-        utils.DisplayUtil.displayInLine(createString());
+        prv.bisik.utils.DisplayUtil.displayInLine(createString());
     }
 
     @Override

@@ -1,4 +1,4 @@
-package domain;
+package prv.bisik.domain;
 
 public class Metric {
     private long id; // id pozycji
@@ -29,8 +29,17 @@ public class Metric {
         return product;
     }
 
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public void setProduct(Product product) {
+        this.product = product;
+    }
 }
 
 

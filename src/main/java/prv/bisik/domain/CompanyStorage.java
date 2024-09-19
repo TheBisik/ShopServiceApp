@@ -1,9 +1,9 @@
-package domain;
+package prv.bisik.domain;
 
 import java.util.List;
 
-import static utils.DisplayUtil.displayInLine;
-import static utils.DisplayUtil.space;
+import static prv.bisik.utils.DisplayUtil.displayInLine;
+import static prv.bisik.utils.DisplayUtil.space;
 
 public class CompanyStorage {
     final private long id;

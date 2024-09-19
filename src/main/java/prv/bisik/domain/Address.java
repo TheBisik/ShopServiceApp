@@ -1,6 +1,6 @@
-package domain;
+package prv.bisik.domain;
 
-import static utils.DisplayUtil.displayInLine;
+import static prv.bisik.utils.DisplayUtil.displayInLine;
 
 
 public class Address {

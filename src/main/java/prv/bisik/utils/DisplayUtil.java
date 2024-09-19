@@ -1,4 +1,4 @@
-package utils;
+package prv.bisik.utils;
 
 public class DisplayUtil {
 

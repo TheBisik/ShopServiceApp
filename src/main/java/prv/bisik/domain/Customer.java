@@ -1,4 +1,4 @@
-package domain;
+package prv.bisik.domain;
 
 import java.util.Date;
 

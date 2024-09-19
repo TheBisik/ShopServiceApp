@@ -1,9 +1,11 @@
-import Exceptions.MySpecException;
-import domain.*;
+package prv.bisik;
 
-import enums.ClothsTypeForWashing;
-import enums.CountOfBlades;
-import enums.SoapType;
+import prv.bisik.Exceptions.MySpecException;
+import prv.bisik.domain.*;
+
+import prv.bisik.enums.ClothsTypeForWashing;
+import prv.bisik.enums.CountOfBlades;
+import prv.bisik.enums.SoapType;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -11,11 +13,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import static utils.DisplayUtil.*;
+import static prv.bisik.utils.DisplayUtil.*;
 
 public class ShopServiceApp {
     public static void main(String[] args) {
-        System.out.println("ShopServiceApp. Hello world!");
+
+        System.out.println("prv.bisik.ShopServiceApp. Hello world!");
         //tworzenie produktów z cenami(jako cecha produktu)
         Soap soap = new Soap(1L, "Super Soap", BigDecimal.valueOf(24.90), "Mydło do higeny intymnej", SoapType.LIQUID);
         WashingPowder washingPowder = new WashingPowder(2L, "Wizir", BigDecimal.valueOf(16.20), "Podstawowy proszek do prania", ClothsTypeForWashing.COLOR);

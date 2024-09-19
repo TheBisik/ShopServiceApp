@@ -1,9 +1,9 @@
-package domain;
+package prv.bisik.domain;
 
 
 import java.util.List;
 
-import static utils.DisplayUtil.displayInLine;
+import static prv.bisik.utils.DisplayUtil.displayInLine;
 
 public class Company {
     final private long id;

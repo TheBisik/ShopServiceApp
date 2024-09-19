@@ -1,13 +1,13 @@
-package domain;
+package prv.bisik.domain;
 
-import interfaces.StringCreator;
+import prv.bisik.interfaces.StringCreator;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static utils.DisplayUtil.displayInLine;
+import static prv.bisik.utils.DisplayUtil.displayInLine;
 
 final public class Companies implements StringCreator {
 

@@ -1,11 +1,11 @@
-package domain;
+package prv.bisik.domain;
 
-import enums.CountOfBlades;
-import interfaces.StringCreator;
+import prv.bisik.enums.CountOfBlades;
+import prv.bisik.interfaces.StringCreator;
 
 import java.math.BigDecimal;
 
-import static utils.DisplayUtil.displayInLine;
+import static prv.bisik.utils.DisplayUtil.displayInLine;
 
 public class Razor extends Product implements StringCreator {
 

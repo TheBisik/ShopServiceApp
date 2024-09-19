@@ -1,7 +1,7 @@
-package domain;
+package prv.bisik.domain;
 
-import Exceptions.MySpecException;
-import utils.EmailValidator;
+import prv.bisik.Exceptions.MySpecException;
+import prv.bisik.utils.EmailValidator;
 
 public abstract class User {
     long id;
