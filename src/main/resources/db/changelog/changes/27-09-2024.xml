@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.17.xsd">
+
+  <changeSet id="01" author="a.cichosz">
+    <preConditions onFail="MARK_RAN">
+      <not>
+        <tableExists tableName="cars"/>
+      </not>
+    </preConditions>
+    <createTable tableName="cars">
+        <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints nullable="false" primaryKey="true"/>
+        </column>
+        <column name="brand" type="VARCHAR(100)"/>
+        <column name="model" type="VARCHAR(100)"/>
+        <column name="production_year" type="VARCHAR(4)"/>
+        <column name="capacity" type="INT">
+            <constraints nullable="false"/>
+        </column>
+        <column name="weight" type="INT">
+            <constraints nullable="false"/>
+        </column>
+        <column name="fuel" type="VARCHAR(10)"/>
+    </createTable>
+  </changeSet>
+  <changeSet id="02" author="a.cichosz">
+    <insert tableName="cars">
+      <column name="brand" value="OPEL"/>
+      <column name="model" value="CORSA"/>
+      <column name="production_year" value="2019"/>
+      <column name="capacity" valueNumeric="1200"/>
+      <column name="weight" valueNumeric="720"/>
+      <column name="fuel" value="DIESEL"/>
+    </insert>
+    <insert tableName="cars">
+      <column name="brand" value="OPEL"/>
+      <column name="model" value="INSIGNIA"/>
+      <column name="production_year" value="2022"/>
+      <column name="capacity" valueNumeric="999"/>
+      <column name="weight" valueNumeric="700"/>
+      <column name="fuel" value="DIESEL"/>
+    </insert>
+    <insert tableName="cars">
+      <column name="brand" value="SKODA"/>
+      <column name="model" value="FABIA"/>
+      <column name="production_year" value="2022"/>
+      <column name="capacity" valueNumeric="999"/>
+      <column name="weight" valueNumeric="1147"/>
+      <column name="fuel" value="GASOLINE"/>
+    </insert>
+    <insert tableName="cars">
+      <column name="brand" value="DACIA"/>
+      <column name="model" value="SANDERO"/>
+      <column name="production_year" value="2018"/>
+      <column name="capacity" valueNumeric="999"/>
+      <column name="weight" valueNumeric="1139"/>
+      <column name="fuel" value="LPG"/>
+    </insert>
+    <insert tableName="cars">
+      <column name="brand" value="KIA"/>
+      <column name="model" value="STONIC"/>
+      <column name="production_year" value="2018"/>
+      <column name="capacity" valueNumeric="1215"/>
+      <column name="weight" valueNumeric="1211"/>
+      <column name="fuel" value="GASOLINE"/>
+    </insert>
+  </changeSet>
+</databaseChangeLog>

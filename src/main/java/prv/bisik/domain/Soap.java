@@ -1,13 +1,24 @@
 package prv.bisik.domain;
 
+import jakarta.annotation.Nonnull;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import prv.bisik.enums.SoapType;
 import prv.bisik.interfaces.StringCreator;
 
 import java.math.BigDecimal;
 
+@Entity
 public class Soap extends Product implements StringCreator {
 
+    @Enumerated(value = EnumType.STRING)
+    @Nonnull
     private SoapType soapType;
+
+    public Soap() {
+        super();
+    }
 
     public Soap(long id, String name, BigDecimal price, String description, SoapType soapType) {
         super(id, name, price, description);

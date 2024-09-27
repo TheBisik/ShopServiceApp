@@ -1,17 +1,30 @@
 package prv.bisik.domain;
 
+import jakarta.annotation.Nonnull;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.MappedSuperclass;
+
 import java.math.BigDecimal;
 import java.util.Objects;
 
+@MappedSuperclass
 public abstract class Product {
 
-    final long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    long id;
 
+    @Nonnull
     protected String name;
 
     protected BigDecimal price;
 
     protected String description;
+
+    public Product() {
+    }
 
     public Product(long id, String name, BigDecimal price, String description) {
         this.id = id;
