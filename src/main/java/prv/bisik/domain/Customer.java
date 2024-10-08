@@ -1,13 +1,21 @@
 package prv.bisik.domain;
 
+import jakarta.annotation.Nonnull;
+import jakarta.persistence.Entity;
+
 import java.util.Date;
 
+@Entity
 public class Customer extends User {
 
-    protected String name;
-    protected String surname;
-    protected String phoneNumber;
-    protected Date date; //Nie ustawiam na final ponieważ ktoś może się pomylić lub chcieć zmienić date w razie podania fałszywych informacji
+    @Nonnull
+    private String name;
+    @Nonnull
+    private String surname;
+    @Nonnull
+    private String phoneNumber;
+    @Nonnull
+    private Date date; //Nie ustawiam na final ponieważ ktoś może się pomylić lub chcieć zmienić date w razie podania fałszywych informacji
 
     public Customer(long id, String password, String email, String name, String surname, String phoneNumber, Date date) {
         super(id, password, email);
@@ -15,6 +23,10 @@ public class Customer extends User {
         this.surname = surname;
         this.phoneNumber = phoneNumber;
         this.date = date;
+    }
+
+    public Customer() {
+        super();
     }
 
     public String getName() {

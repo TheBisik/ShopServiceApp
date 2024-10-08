@@ -1,15 +1,29 @@
 package prv.bisik.domain;
 
+import jakarta.annotation.Nonnull;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 import java.util.List;
 
 import static prv.bisik.utils.DisplayUtil.displayInLine;
 import static prv.bisik.utils.DisplayUtil.space;
 
+@Entity
 public class CompanyStorage {
-    final private long id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Nonnull
     private String storageName;
-    private List<Metric> metricList;
-    final private Address storageAddress;
+
+    //private List<Metric> metricList;
+
+    private Address storageAddress;
 
 
     public CompanyStorage(long id, String storageName, Address storageAddress, List<Metric> metricList) {
@@ -17,6 +31,10 @@ public class CompanyStorage {
         this.storageName = storageName;
         this.storageAddress = storageAddress;
         this.metricList = metricList;
+    }
+
+    public CompanyStorage() {
+
     }
 
     public void addMetric(Metric metric) {

@@ -19,6 +19,7 @@ public abstract class Product {
     @Nonnull
     protected String name;
 
+    @Nonnull
     protected BigDecimal price;
 
     protected String description;

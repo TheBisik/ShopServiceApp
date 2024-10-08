@@ -1,5 +1,7 @@
 package prv.bisik.domain;
 
+import jakarta.annotation.Nonnull;
+import jakarta.persistence.Entity;
 import prv.bisik.enums.CountOfBlades;
 import prv.bisik.interfaces.StringCreator;
 
@@ -7,13 +9,19 @@ import java.math.BigDecimal;
 
 import static prv.bisik.utils.DisplayUtil.displayInLine;
 
+@Entity
 public class Razor extends Product implements StringCreator {
 
+    @Nonnull
     private CountOfBlades countOfBlades;
 
     public Razor(long id, String name, BigDecimal price, String description, CountOfBlades countOfBlades) {
         super(id, name, price, description);
         this.countOfBlades = countOfBlades;
+    }
+
+    public Razor() {
+        super();
     }
 
     public String getName() {

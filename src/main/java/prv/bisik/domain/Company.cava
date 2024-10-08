@@ -1,27 +1,43 @@
 package prv.bisik.domain;
 
 
+import jakarta.annotation.Nonnull;
+import jakarta.persistence.*;
+
 import java.util.List;
 
 import static prv.bisik.utils.DisplayUtil.displayInLine;
 
+@Entity
 public class Company {
-    final private long id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Nonnull
     private String companyName;
+
+    @Nonnull
     private Address address;
-    private List<CompanyStorage> companyStorageList;
+
+    //private List<CompanyStorage> companyStorageList;
 
     public Company(long id, String companyName, Address address, List<CompanyStorage> companyStorageList) {
         this.id = id;
         this.companyName = companyName;
         this.address = address;
-        this.companyStorageList = companyStorageList;
+        //this.companyStorageList = companyStorageList;
     }
     // Przykład Firmy bez magazynu
     public Company(long id, String companyName, Address address) {
         this.id = id;
         this.companyName = companyName;
         this.address = address;
+    }
+
+    public Company() {
+
     }
 
     public long getId() {
@@ -44,7 +60,7 @@ public class Company {
         this.address = address;
     }
 
-    public List<CompanyStorage> getCompanyStorageList() {
+/*    public List<CompanyStorage> getCompanyStorageList() {
         return companyStorageList;
     }
 
@@ -54,6 +70,6 @@ public class Company {
 
     public void sizeOfItemInCatalog() {
         displayInLine("Ilość Przedmiotów w katalogu:\t" + this.companyStorageList.size() + " pozycji.");
-    }
+    }*/
 
 }
