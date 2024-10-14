@@ -26,13 +26,13 @@ public class Soap extends Product implements StringCreator {
     }
 
     public String getName(){
-        return name;
+        return super.getName();
     }
     public BigDecimal getPrice(){
-        return price;
+        return super.getPrice();
     }
     public String getDescription(){
-        return description;
+        return super.getDescription();
     }
     public SoapType getEnum() {
         return soapType;
@@ -45,7 +45,7 @@ public class Soap extends Product implements StringCreator {
 
     @Override
     public String createString() {
-        return "ID: " + this.id + "\nType of soap: " + this.soapType + "\nName: " + this.name + "\nPrice: " + this.price + "\nDescription: " + this.description;
+        return "ID: " + this.getId() + "\nType of soap: " + this.soapType + "\nName: " + super.getName() + "\nPrice: " + super.getPrice() + "\nDescription: " + super.getDescription();
 
     }
 }

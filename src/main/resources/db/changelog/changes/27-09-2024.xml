@@ -1,28 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <databaseChangeLog
-  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.17.xsd">
 
-  <changeSet id="01" author="a.cichosz">
-    <preConditions onFail="MARK_RAN">
-      <not>
-        <tableExists tableName="Address"/>
-      </not>
-    </preConditions>
-    <createTable tableName="Address">
-        <column autoIncrement="true" name="id" type="BIGINT">
-            <constraints nullable="false" primaryKey="true"/>
-        </column>
-        <column name="street" type="VARCHAR(100)"/>
-        <column name="number" type="VARCHAR(100)"/>
-        <column name="postal_code" type="VARCHAR(10)"/>
-        <column name="city" type="varchar(100)"/>
-        <column name="state" type="varchar(100)"/>
-        <column name="country" type="varchar(100)"/>
-    </createTable>
-  </changeSet>
+    <changeSet id="01" author="a.cichosz">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="Address"/>
+            </not>
+        </preConditions>
+        <createTable tableName="Address">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="street" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="number" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="postal_code" type="VARCHAR(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="city" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="state" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="country" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
 
     <changeSet id="02" author="a.cichosz">
         <preConditions onFail="MARK_RAN">
@@ -30,25 +42,31 @@
                 <tableExists tableName="Customer"/>
             </not>
         </preConditions>
-        <createTable tableName="Address">
+        <createTable tableName="Customer">
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
-            <column name="name" type="VARCHAR(100)"/>
-            <column name="surname" type="VARCHAR(100)"/>
-            <column name="phoneNumber" type="VARCHAR(20)"/>
-            <column name="date" type="date"/>
+            <column name="customerName" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="address_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="phoneNumber" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="varchar(150)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="varchar(8)">
+                <constraints nullable="false"/>
+            </column>
         </createTable>
+        <addForeignKeyConstraint baseColumnNames="address_id"
+                                 baseTableName="Customer"
+                                 constraintName="fk_customer_address_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="Address"/>
     </changeSet>
 
-  <changeSet id="06" author="a.cichosz">
-    <insert tableName="Address">
-      <column name="street" value="Pułaskiego"/>
-      <column name="number" value="10A"/>
-      <column name="postal_code" value="86-300"/>
-      <column name="city" value="Grudziądz"/>
-      <column name="state" value="Kujawsko-Pomorskie"/>
-      <column name="country" value="Polska"/>
-    </insert>
-  </changeSet>
 </databaseChangeLog>

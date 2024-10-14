@@ -23,7 +23,7 @@ public class WashingPowder extends Product implements StringCreator {
     }
 
     public String getDescription(){
-        return description;
+        return super.getDescription();
     }
     public ClothsTypeForWashing getEnum() {
         return clothsTypeForWashing;
@@ -37,7 +37,7 @@ public class WashingPowder extends Product implements StringCreator {
 
     @Override
     public String createString() {
-        return "ID: " + this.id +  "\nType of washing powder: " + this.clothsTypeForWashing + "\nName: " + this.name + "\nPrice: " + this.price + "\nDescription: " + this.description;
+        return "ID: " + this.getId() +  "\nType of washing powder: " + this.clothsTypeForWashing + "\nName: " + this.getName() + "\nPrice: " + this.getPrice() + "\nDescription: " + super.getDescription();
 
 
     }

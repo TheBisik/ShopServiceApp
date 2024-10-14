@@ -1,10 +1,6 @@
 package prv.bisik.domain;
 
-import jakarta.annotation.Nonnull;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import static prv.bisik.utils.DisplayUtil.displayInLine;
 
@@ -15,22 +11,22 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Nonnull
+    @Column(nullable = false)
     private String street;
 
-    @Nonnull
+    @Column(nullable = false)
     private String number;
 
-    @Nonnull
+    @Column(nullable = false)
     private String postalCode;
 
-    @Nonnull
+    @Column(nullable = false)
     private String city;
 
-    @Nonnull
+    @Column(nullable = false)
     private String state;
 
-    @Nonnull
+    @Column(nullable = false)
     private String country;
 
     public Address(String street, String number, String postalCode, String city, String state, String country) {

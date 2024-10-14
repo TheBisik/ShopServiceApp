@@ -1,10 +1,7 @@
 package prv.bisik.domain;
 
 import jakarta.annotation.Nonnull;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.*;
 import prv.bisik.Exceptions.MySpecException;
 import prv.bisik.utils.EmailValidator;
 
@@ -14,9 +11,11 @@ public abstract class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected long id;
-    @Nonnull
+
+    @Column(nullable = false, length = 8)
     protected String password;
-    @Nonnull
+
+    @Column(nullable = false, length = 150)
     protected String email;
 
     public User() {

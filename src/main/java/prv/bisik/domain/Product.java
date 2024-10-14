@@ -1,38 +1,36 @@
 package prv.bisik.domain;
 
 import jakarta.annotation.Nonnull;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.util.Objects;
 
-@MappedSuperclass
-public abstract class Product {
+@Entity
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id;
+    private long id;
 
-    @Nonnull
-    protected String name;
+    @Column(nullable = false)
+    private String name;
 
-    @Nonnull
-    protected BigDecimal price;
+    @Column(nullable = false)
+    private BigDecimal price;
 
-    protected String description;
+    @Column(nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "category_id", referencedColumnName = "id")
+    private Category category;
+
+    private String description;
 
     public Product() {
+
     }
 
-    public Product(long id, String name, BigDecimal price, String description) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.description = description;
-    }
+    public Product(@Nonnull String name, @Nonnull BigDecimal price, @Nonnull String category, @Nonnull String description) {}
 
     public long getId() {
         return id;
@@ -50,18 +48,40 @@ public abstract class Product {
         return description;
     }
 
-    public abstract void describe();
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o; // rzutowanie typu
-        return id == product.id && Objects.equals(name, product.name) && Objects.equals(price, product.price) && Objects.equals(description, product.description);
+        return getId() == product.getId() && Objects.equals(getName(), product.getName()) && Objects.equals(getPrice(), product.getPrice()) && Objects.equals(getDescription(), product.getDescription()) && Objects.equals(getCategory(), product.getCategory());
     }
 
     @Override
     public int hashCode() {
-        return (Objects.hashCode(id) * Objects.hashCode(name) * Objects.hashCode(price) * Objects.hashCode(description));
+        return (Objects.hashCode(getId()) * Objects.hashCode(getName()) * Objects.hashCode(getPrice()) * Objects.hashCode(getDescription()));
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }

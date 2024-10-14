@@ -1,48 +1,47 @@
 package prv.bisik.domain;
 
-import jakarta.annotation.Nonnull;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-
-import java.util.Date;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Customer extends User {
 
-    @Nonnull
-    private String name;
-    @Nonnull
-    private String surname;
-    @Nonnull
-    private String phoneNumber;
-    @Nonnull
-    private Date date; //Nie ustawiam na final ponieważ ktoś może się pomylić lub chcieć zmienić date w razie podania fałszywych informacji
+    @Column(nullable = false, length = 100)
+    private String customerName;
 
-    public Customer(long id, String password, String email, String name, String surname, String phoneNumber, Date date) {
-        super(id, password, email);
-        this.name = name;
-        this.surname = surname;
-        this.phoneNumber = phoneNumber;
-        this.date = date;
-    }
+    @Column(nullable = false)
+    @OneToOne
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
+    private Address address;
+
+    @Column(nullable = false, length = 20)
+    private String phoneNumber;
 
     public Customer() {
         super();
     }
 
-    public String getName() {
-        return name;
+    public Customer(String customerName, Address address, String phoneNumber) {
+        this.customerName = customerName;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public Customer(long id, String password, String email, String customerName, Address address, String phoneNumber) {
+        super(id, password, email);
+        this.customerName = customerName;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
     public String getPhoneNumber() {
@@ -51,14 +50,6 @@ public class Customer extends User {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
     }
 }
 
