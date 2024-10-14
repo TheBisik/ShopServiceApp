@@ -11,7 +11,6 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "type", nullable = false)
     @OneToOne()
     @JoinColumn(name = "category_type_id", referencedColumnName = "id")
     private CategoryType categoryType;

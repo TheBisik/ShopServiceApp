@@ -19,7 +19,6 @@ public class Product {
     @Column(nullable = false)
     private BigDecimal price;
 
-    @Column(nullable = false)
     @ManyToOne
     @JoinColumn(name = "category_id", referencedColumnName = "id")
     private Category category;

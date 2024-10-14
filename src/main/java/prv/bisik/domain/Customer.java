@@ -11,7 +11,6 @@ public class Customer extends User {
     @Column(nullable = false, length = 100)
     private String customerName;
 
-    @Column(nullable = false)
     @OneToOne
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
