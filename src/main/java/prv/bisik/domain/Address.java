@@ -11,22 +11,22 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 100)
     private String street;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 100)
     private String number;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 10)
     private String postalCode;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 100)
     private String city;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 100)
     private String state;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 100)
     private String country;
 
     public Address(String street, String number, String postalCode, String city, String state, String country) {

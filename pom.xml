@@ -66,7 +66,17 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-maven-plugin</artifactId>
+                <version>4.29.2</version>
+                <!--<configuration>
+                    <driver>org.postgresql.Driver</driver>
+                    <url>jdbc:postgresql://database.pcdevs.pl:30119/shopserviceapp_database</url>
+                    <username>Admin</username>
+                    <password>Nauka!</password>
+                </configuration>-->
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
