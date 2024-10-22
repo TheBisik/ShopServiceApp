@@ -8,10 +8,10 @@
     <changeSet id="01" author="a.cichosz">
         <preConditions onFail="MARK_RAN">
             <not>
-                <tableExists tableName="Address"/>
+                <tableExists tableName="address"/>
             </not>
         </preConditions>
-        <createTable tableName="Address">
+        <createTable tableName="address">
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
@@ -39,20 +39,20 @@
     <changeSet id="02" author="a.cichosz">
         <preConditions onFail="MARK_RAN">
             <not>
-                <tableExists tableName="Customer"/>
+                <tableExists tableName="customer"/>
             </not>
         </preConditions>
-        <createTable tableName="Customer">
+        <createTable tableName="customer">
             <column autoIncrement="true" name="id" type="BIGINT">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
-            <column name="customerName" type="VARCHAR(100)">
+            <column name="customer_name" type="VARCHAR(100)">
                 <constraints nullable="false"/>
             </column>
             <column name="address_id" type="BIGINT">
                 <constraints nullable="false"/>
             </column>
-            <column name="phoneNumber" type="VARCHAR(20)">
+            <column name="phone_number" type="VARCHAR(20)">
                 <constraints nullable="false"/>
             </column>
             <column name="email" type="varchar(150)">
@@ -63,10 +63,10 @@
             </column>
         </createTable>
         <addForeignKeyConstraint baseColumnNames="address_id"
-                                 baseTableName="Customer"
+                                 baseTableName="customer"
                                  constraintName="fk_customer_address_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="Address"/>
+                                 referencedTableName="address"/>
     </changeSet>
 
 </databaseChangeLog>

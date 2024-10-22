@@ -11,6 +11,7 @@ public class CategoryType {
     private long id;
 
     @Column(nullable = false, unique = true)
+    @Enumerated(EnumType.STRING)
     private GeneralProductType generalProductType;
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "categoryType")
