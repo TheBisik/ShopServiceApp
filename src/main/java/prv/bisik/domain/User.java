@@ -1,6 +1,6 @@
 package prv.bisik.domain;
 
-import jakarta.annotation.Nonnull;
+
 import jakarta.persistence.*;
 import prv.bisik.Exceptions.MySpecException;
 import prv.bisik.utils.EmailValidator;
