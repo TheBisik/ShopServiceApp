@@ -24,11 +24,7 @@ public abstract class User {
     public User(long id, String password, String email) {
         this.id = id;
         this.password = password;
-       // if (EmailValidator.isValidEmail(email)) {
-            this.email = email;
-       /* } else {
-            throw new IllegalArgumentException("Invalid email address");
-        }*/
+        this.email = email;
     }
 
     public long getId() {
@@ -51,8 +47,7 @@ public abstract class User {
         if (EmailValidator.isValidEmail(email)) {
             this.email = email;
         } else {
-            //throw new IllegalArgumentException("Invalid email address");
-            throw new MySpecException("Test exception");
+            throw new IllegalArgumentException("Invalid email address");
         }
     }
 }

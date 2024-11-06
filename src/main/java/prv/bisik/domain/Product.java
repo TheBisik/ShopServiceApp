@@ -23,7 +23,7 @@ public class Product {
     @JoinColumn(name = "category_id", referencedColumnName = "id")
     private Category category;
 
-    @Column(nullable = true) /* nullable = false | dodałem @Column ponieważ go tu nie było i pozwoliłem żeby mógł przyjmować pustą wartość gdyż nie zawsze produkt wymaga opisu */
+    @Column
     private String description;
 
     public Product() {
