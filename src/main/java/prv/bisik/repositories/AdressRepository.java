@@ -17,3 +17,4 @@ public interface AdressRepository extends JpaRepository<Address, Long> {
     List<Address> getAddressesByNumberAndAndCityAndAndPostalCode(String number, String city, String postalCode);
 
 }
+// fix

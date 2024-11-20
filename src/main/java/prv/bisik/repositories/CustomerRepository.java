@@ -14,3 +14,4 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
     Customer getCustomerByPesel(String pesel);
 
 }
+// fix
