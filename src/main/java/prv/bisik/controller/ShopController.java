@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import prv.bisik.dtos.AddressDto;
 import prv.bisik.dtos.CategoryDto;
 import prv.bisik.dtos.CustomerDto;
 import prv.bisik.dtos.ProductDto;
@@ -39,4 +40,17 @@ public class ShopController {
         CustomerDto createdCustomer = customerDto;
         return new ResponseEntity<>(createdCustomer, HttpStatus.CREATED);
     }
+
+    // Add new endpoint for getting all customers
+    @GetMapping("/customers")
+    ResponseEntity<List<CustomerDto>> getAllCustomers() {
+        return new ResponseEntity<>(null, HttpStatus.OK);
+    }
+
+    // Add new endpoint for getting all Address
+    @GetMapping("/address")
+    ResponseEntity<List<AddressDto>> getAllAddress() {
+        return new ResponseEntity<>(null, HttpStatus.OK);
+    }
+
 }
