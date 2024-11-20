@@ -41,16 +41,20 @@ public class ShopController {
         return new ResponseEntity<>(createdCustomer, HttpStatus.CREATED);
     }
 
-    // Add new endpoint for getting all customers
-    @GetMapping("/customers")
-    ResponseEntity<List<CustomerDto>> getAllCustomers() {
-        return new ResponseEntity<>(null, HttpStatus.OK);
-    }
-
     // Add new endpoint for getting all Address
     @GetMapping("/address")
     ResponseEntity<List<AddressDto>> getAllAddress() {
         return new ResponseEntity<>(null, HttpStatus.OK);
+    }
+
+    @PostMapping
+    public ResponseEntity<CustomerDto> addCustomer(@RequestBody CustomerDto customerDto) {
+        try {
+            CustomerDto createdCustomer = customerService.addCustomer(customerDto);
+            return new ResponseEntity<>(createdCustomer, HttpStatus.CREATED);
+        } catch (IlegalArgumentException e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST).body(null);
+        }
     }
 
 }
