@@ -1,34 +1,32 @@
 package prv.bisik.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import prv.bisik.domain.Customer;
+import prv.bisik.mappers.CustomerMapper;
 import prv.bisik.repositories.CustomerRepository;
-import prv.bisik.repositories.ProductRepository;
 import prv.bisik.dtos.CustomerDto;
+
+import java.util.Optional;
 
 @Service
 public class CustomerService {
 
     private CustomerRepository customerRepository;
 
-    @Autowired
     public CustomerService(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
 
     public CustomerDto getCustomerById(Long id) {
-        customerRepository.getCustomerById(id);
-        return new Customer();
+        return CustomerMapper.toDto(customerRepository.getCustomerById(id));
     }
 
-    public CustomerDto addCustomer(Customer customer) {
-        if (customerRepository.existsByEmail(customer.getEmail())) {
+    public CustomerDto addCustomer(CustomerDto customerDto) {
+        Optional<Customer> opt = Optional.ofNullable(customerRepository.getCustomerByEmail(customerDto.getEmail()));
+        if (opt.isPresent()) {
             throw new IllegalArgumentException("Customer with this email already exists");
         }
-        return customerRepository.save(customer);
+        return CustomerMapper.toDto(customerRepository.save(CustomerMapper.toEntity(customerDto)));
     }
 
-
 }
-// fix

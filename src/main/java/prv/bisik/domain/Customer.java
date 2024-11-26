@@ -47,6 +47,10 @@ public class Customer extends User {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+    public Address getAddress() {
+        return address;
+    }
 }
 
 

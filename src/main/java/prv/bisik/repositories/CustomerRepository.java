@@ -7,11 +7,12 @@ import prv.bisik.domain.Customer;
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
-    boolean existsByEmail(String email);
+    Customer getCustomerByEmail(String email);
 
     Customer getCustomerById(Long id);
 
-    Customer getCustomerByPesel(String pesel);
+    Customer save(Customer customer);
 
+    void delete(Customer entity);
 }
 // fix

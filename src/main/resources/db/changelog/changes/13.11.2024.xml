@@ -6,97 +6,36 @@
 
     <changeSet id="6" author="BaranskiFa">
         <insert tableName="address">
-            <column name="street" value="Adamowicza"></column>
-            <column name="number"  value="23/4"></column>
-            <column name="postal_code"  value="86-600"></column>
-            <column name="city"  value="Chojnice"></column>
-            <column name="state"  value="Pomorskie"></column>
-            <column name="country"  value="Polska"></column>
+            <column name="street" value="Adamowicza"/>
+            <column name="number"  value="23/4"/>
+            <column name="postal_code"  value="86-600"/>
+            <column name="city"  value="Chojnice"/>
+            <column name="state"  value="Pomorskie"/>
+            <column name="country"  value="Polska"/>
         </insert>
         <insert tableName="address">
-            <column name="street" value="Narutowicza"></column>
-            <column name="number"  value="12A"></column>
-            <column name="postal_code"  value="86-600"></column>
-            <column name="city"  value="Chojnice"></column>
-            <column name="state"  value="Pomorskie"></column>
-            <column name="country"  value="Polska"></column>
+            <column name="street" value="Narutowicza"/>
+            <column name="number"  value="12A"/>
+            <column name="postal_code"  value="86-600"/>
+            <column name="city"  value="Chojnice"/>
+            <column name="state"  value="Pomorskie"/>
+            <column name="country"  value="Polska"/>
         </insert>
         <insert tableName="address">
-            <column name="street" value="Kukuły"></column>
-            <column name="number"  value="8"></column>
-            <column name="postal_code"  value="56-230"></column>
-            <column name="city"  value="Dąbki"></column>
-            <column name="state"  value="Pomorskie"></column>
-            <column name="country"  value="Polska"></column>
+            <column name="street" value="Kukuły"/>
+            <column name="number"  value="8"/>
+            <column name="postal_code"  value="56-230"/>
+            <column name="city"  value="Dąbki"/>
+            <column name="state"  value="Pomorskie"/>
+            <column name="country"  value="Polska"/>
         </insert>
         <insert tableName="address">
-            <column name="street" value="Schützenstiege"></column>
-            <column name="number"  value="89"></column>
-            <column name="postal_code"  value="48629"></column>
-            <column name="city"  value="Metelen"></column>
-            <column name="state"  value="Nadrenia Północna-Westfalia"></column>
-            <column name="country"  value="Niemcy"></column>
+            <column name="street" value="Schützenstiege"/>
+            <column name="number"  value="89"/>
+            <column name="postal_code"  value="48629"/>
+            <column name="city"  value="Metelen"/>
+            <column name="state"  value="Nadrenia Północna-Westfalia"/>
+            <column name="country"  value="Niemcy"/>
         </insert>
     </changeSet>
-
-    <changeSet id="7" author="BaranskiFa">
-        <insert tableName="category_type">
-            <column name="general_product_type" value="NONE"></column>
-        </insert>
-        <insert tableName="category_type">
-            <column name="general_product_type" value="WASHING_POWDER"></column>
-        </insert>
-        <insert tableName="category_type">
-            <column name="general_product_type" value="RAZOR"></column>
-        </insert>
-        <insert tableName="category_type">
-            <column name="general_product_type" value="SOAP"></column>
-        </insert>
-    </changeSet>
-
-    <changeSet id="8" author="BaranskiFa">
-        <insert tableName="category">
-            <column name="category_type_id" value="14"></column>
-        </insert>
-        <insert tableName="category">
-            <column name="category_type_id" value="15"></column>
-        </insert>
-        <insert tableName="category">
-            <column name="category_type_id" value="16"></column>
-        </insert>
-        <insert tableName="category">
-            <column name="category_type_id" value="17"></column>
-        </insert>
-    </changeSet>
-
-    <changeSet id="9" author="BaranskiFa">
-        <insert tableName="product">
-            <column name="name" value="Persil"></column>
-            <column name="price" value="23"></column>
-            <column name="category_id" value="8"></column>
-            <column name="description" value="Proszek jest pierwszym moim produktem w bazie dancyh!"></column>
-        </insert>
-
-        <insert tableName="product">
-            <column name="name" value="Gillette"></column>
-            <column name="price" value="12"></column>
-            <column name="category_id" value="9"></column>
-            <column name="description" value="Maszynka do golenia"></column>
-        </insert>
-
-        <insert tableName="product">
-            <column name="name" value="toothbrush"></column>
-            <column name="price" value="3"></column>
-            <column name="category_id" value="7"></column>
-            <column name="description" value="Szczoteczka do zębów"></column>
-        </insert>
-
-        <insert tableName="product">
-            <column name="name" value="BialyJelen"></column>
-            <column name="price" value="8"></column>
-            <column name="category_id" value="10"></column>
-            <column name="description" value="Proszek do prania"></column>
-        </insert>
-    </changeSet>
-
 </databaseChangeLog>

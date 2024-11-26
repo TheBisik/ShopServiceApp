@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="10" author="BaranskiFa">
+        <insert tableName="customer">
+            <column name="customer_name" value="Hurtownia Proszki i Pralki Sp. z o.o."/>
+            <column name="address_id" value="3"/>
+            <column name="phone_number" value="501103107"/>
+            <column name="password" value="haslo1"/>
+            <column name="email" value="klient1@wp.pl"/>
+        </insert>
+
+        <insert tableName="customer">
+            <column name="customer_name" value="Mydło i powidło S.C."/>
+            <column name="address_id" value="1"/>
+            <column name="phone_number" value="501127107"/>
+            <column name="password" value="haslo2"/>
+            <column name="email" value="klient2@wp.pl"/>
+        </insert>
+
+        <insert tableName="customer">
+            <column name="customer_name" value="Sklep wielobranżowy Monika"/>
+            <column name="address_id" value="2"/>
+            <column name="phone_number" value="501113117"/>
+            <column name="password" value="haslo3"/>
+            <column name="email" value="klient3@wp.pl"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

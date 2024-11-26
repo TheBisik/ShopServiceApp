@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="9" author="BaranskiFa">
+        <insert tableName="product">
+            <column name="name" value="Persil"/>
+            <column name="price" value="23"/>
+            <column name="category_id" value="2"/>
+            <column name="description" value="Proszek jest pierwszym moim produktem w bazie dancyh!"></column>
+        </insert>
+
+        <insert tableName="product">
+            <column name="name" value="Gillette"/>
+            <column name="price" value="12"/>
+            <column name="category_id" value="3"/>
+            <column name="description" value="Maszynka do golenia"/>
+        </insert>
+
+        <insert tableName="product">
+            <column name="name" value="toothbrush"/>
+            <column name="price" value="3"/>
+            <column name="category_id" value="1"/>
+            <column name="description" value="Szczoteczka do zębów"/>
+        </insert>
+
+        <insert tableName="product">
+            <column name="name" value="BialyJelen"/>
+            <column name="price" value="8"/>
+            <column name="category_id" value="4"/>
+            <column name="description" value="Mydło"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

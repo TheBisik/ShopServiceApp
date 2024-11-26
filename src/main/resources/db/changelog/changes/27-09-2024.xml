@@ -12,7 +12,7 @@
             </not>
         </preConditions>
         <createTable tableName="address">
-            <column autoIncrement="true" name="id" type="BIGINT">
+            <column autoIncrement="true" name="id" type="BIGINT" startWith="1">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="street" type="VARCHAR(100)">
@@ -43,7 +43,7 @@
             </not>
         </preConditions>
         <createTable tableName="customer">
-            <column autoIncrement="true" name="id" type="BIGINT">
+            <column autoIncrement="true" name="id" type="BIGINT" startWith="1">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="customer_name" type="VARCHAR(100)">

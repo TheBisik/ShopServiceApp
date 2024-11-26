@@ -7,7 +7,7 @@ import prv.bisik.domain.Address;
 import java.util.List;
 
 @Repository
-public interface AdressRepository extends JpaRepository<Address, Long> {
+public interface AddressRepository extends JpaRepository<Address, Long> {
 
     Address getAddressById(Long id);
 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="7" author="BaranskiFa">
+        <insert tableName="category_type">
+            <column name="general_product_type" value="NONE"/>
+        </insert>
+        <insert tableName="category_type">
+            <column name="general_product_type" value="WASHING_POWDER"/>
+        </insert>
+        <insert tableName="category_type">
+            <column name="general_product_type" value="RAZOR"/>
+        </insert>
+        <insert tableName="category_type">
+            <column name="general_product_type" value="SOAP"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
